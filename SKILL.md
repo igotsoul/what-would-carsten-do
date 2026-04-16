@@ -89,10 +89,6 @@ The structure:
 Youtube Knowledge Base/
 ├── index_compact.tsv   ← ALWAYS READ THIS FIRST (lightweight: ~90 KB for ~400 videos)
 ├── index.json          ← Full catalog (only read if you need one_liner or topics fields)
-├── topics/             ← Curated overviews grouped by theme
-│   ├── retrospectives.md
-│   ├── facilitation.md
-│   └── ...
 └── videos/             ← Detailed knowledge cards, one per video
     ├── carsten-lutzen/
     │   ├── CL_001_my-4-step-retrospective.md
@@ -102,7 +98,7 @@ Youtube Knowledge Base/
 
 **IMPORTANT: Token efficiency.** The compact TSV index is ~90% smaller than index.json.
 Always start with the TSV. Only fall back to index.json if you need fields not in the TSV
-(like `one_liner` or `topics`). For most queries, TSV + knowledge cards is sufficient.
+(like `one_liner` or `topics`). For most queries, TSV + a handful of knowledge cards is sufficient.
 
 **If the knowledge base is not accessible** (e.g., in a regular chat without a mounted folder),
 tell the user that you need access to the YouTube Knowledge Base folder. Suggest they open
@@ -111,34 +107,27 @@ a Cowork session with the folder selected, or a Projects session where it's moun
 ## Query flow (Mode 1: Proactive integration)
 
 When the user's request touches a topic that might be covered in the knowledge base, follow
-these steps:
+these three steps:
 
-### Step 1: Read the compact index
+### Step 1: Read `index_compact.tsv` and match
 
-Read `index_compact.tsv` to understand what's available. Each line has: video ID, title,
-top tags (comma-separated), and file path. This is lightweight enough to scan quickly even
-with hundreds of entries.
-
-### Step 2: Identify relevant content
-
-Match the user's request against:
-- The `tags` field in each row (e.g., "retrospective", "facilitation", "feedback")
+Each line has: video ID, title, tags (comma-separated), category, file path. Match the user's
+request against:
+- The `tags` field (e.g., "retrospective", "psychological-safety", "feedback")
 - The `title` for semantic relevance
+- The `category` when the user's request maps to a type (e.g., "Energizer", "Retro Format")
 
-### Step 3: Read topic files and/or knowledge cards
+Think broadly when matching: "team doesn't speak up" should pull in `psychological-safety`,
+`silence`, `participation`, etc. Shortlist up to 5 to 10 candidates, ranked by relevance.
 
-Based on what you found in the index:
-- If there's a matching **topic file** (e.g., `topics/retrospectives.md`), read that first,
-  it gives you a curated cross-video overview with references.
-- If you need more depth on a specific technique, read the individual **video knowledge card**
-  (use the `file` column from the TSV). These contain detailed breakdowns of methods,
-  timestamps, facilitator tips, and context for when to use each approach.
+### Step 2: Read the 3 to 5 best matching knowledge cards
 
-For most queries, the topic file is sufficient. Only dive into individual video cards when the
-user needs specific details, step-by-step instructions, or when the topic file references
-something you want to expand on.
+Use the `file` column from the TSV to read the cards in full. Each card has a structured
+frontmatter plus sections for methods, steps, when to use it, and facilitator tips. Read
+enough cards to have real substance for the user's question, but don't read everything on
+the shortlist, pick the clearest matches.
 
-### Step 4: Synthesize your answer
+### Step 3: Synthesize your answer
 
 Combine what you found in the knowledge base with your general knowledge. The goal is to give
 the user the best possible answer, not just what's in the KB, and not just general knowledge,

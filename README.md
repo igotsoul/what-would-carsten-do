@@ -20,7 +20,6 @@ The bundle contains:
 - `SKILL.md`, the skill definition Claude reads
 - `index_compact.tsv`, a lightweight tab-separated catalog (~90 KB)
 - `index.json`, the full catalog with one-liners and tags
-- `topics/`, curated cross-video overviews (retrospectives, facilitation)
 - `videos/carsten-lutzen/`, one knowledge card per video (375 cards)
 - `processing/`, the pipeline used to build the cards, see "Extending"
 
@@ -37,13 +36,6 @@ Nothing in this bundle replaces watching the original videos. Treat it as
 an index that helps you find the right technique fast, then go watch
 Carsten explain it properly.
 
-## Quick start
-
-1. Download or clone this repository
-2. Install the Claude skill from `SKILL.md`
-3. Make sure the knowledge base files are available in Claude's workspace
-4. Ask questions about facilitation, retrospectives, and agile coaching
-
 ## Installation
 
 ### Cowork or Claude Code
@@ -53,7 +45,7 @@ Carsten explain it properly.
    `~/.claude/skills/youtube-knowledge-base/`.
 2. Place the data folder somewhere Claude can read it. The skill expects a
    folder named `Youtube Knowledge Base` in a mounted workspace, containing
-   `index_compact.tsv`, `index.json`, `topics/`, and `videos/`.
+   `index_compact.tsv`, `index.json`, and `videos/`.
 3. In Cowork, open a session with that folder mounted. In Claude Code, add
    it to your workspace or cd into it before starting Claude.
 
@@ -66,16 +58,8 @@ Base` and sits in the mounted workspace, Claude will find everything.
 If you prefer to unzip yourself: extract the `.skill` file, copy
 `SKILL.md` (and any support files Claude needs alongside it) into
 `~/.claude/skills/youtube-knowledge-base/`, and put the rest of the
-bundle (indices, topics, videos, processing) into a folder called
+bundle (indices, videos, processing) into a folder called
 `Youtube Knowledge Base` in your workspace.
-
-## Repository structure
-
-- `SKILL.md` — skill definition
-- `index_compact.tsv` / `index.json` — searchable catalog
-- `topics/` — curated overviews
-- `videos/` — knowledge cards
-- `processing/` — scripts used to build/update the bundle
 
 ## Usage
 
@@ -106,7 +90,7 @@ steps, when to use it, facilitator tips, and a source link.
 
 ## Attribution and license
 
-Content in `videos/` and `topics/` is derivative: it summarizes Carsten's
+Content in `videos/` is derivative: it summarizes Carsten's
 videos in a structured form. Summaries are short, every card links to the
 original video with a timestamp, and they are meant to point you at the
 source, not replace it. Please respect Carsten's original work: credit
@@ -132,8 +116,6 @@ Typical flow to add a new channel:
 2. Run `python process_channel.py --channel "@HandleName" --prefix XX`.
 3. The script writes cards under `videos/<channel-slug>/` and rebuilds
    `index_compact.tsv` and `index.json`.
-4. Optionally add a curated `topics/<theme>.md` file if you want
-   cross-video overviews on a specific topic.
 
 The skill itself is channel-agnostic. It reads whatever is in
 `index_compact.tsv`, so a mixed bundle (multiple channels) works the same
