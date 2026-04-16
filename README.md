@@ -69,14 +69,6 @@ If you prefer to unzip yourself: extract the `.skill` file, copy
 bundle (indices, topics, videos, processing) into a folder called
 `Youtube Knowledge Base` in your workspace.
 
-## Repository structure
-
-- `SKILL.md` — skill definition
-- `index_compact.tsv` / `index.json` — searchable catalog
-- `topics/` — curated overviews
-- `videos/` — knowledge cards
-- `processing/` — scripts used to build/update the bundle
-
 ## Usage
 
 ### Proactive mode (default)
