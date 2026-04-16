@@ -40,13 +40,14 @@ Carsten explain it properly.
 
 ### Cowork or Claude Code
 
-1. Drop `youtube-knowledge-base.skill` onto the chat, or import it through
+1. Download youtube-knowledge-base.skill from the latest release.
+2. Drop `youtube-knowledge-base.skill` onto the chat, or import it through
    the skill installer in your client. The skill files land in
    `~/.claude/skills/youtube-knowledge-base/`.
-2. Place the data folder somewhere Claude can read it. The skill expects a
+3. Place the data folder somewhere Claude can read it. The skill expects a
    folder named `Youtube Knowledge Base` in a mounted workspace, containing
    `index_compact.tsv`, `index.json`, and `videos/`.
-3. In Cowork, open a session with that folder mounted. In Claude Code, add
+4. In Cowork, open a session with that folder mounted. In Claude Code, add
    it to your workspace or cd into it before starting Claude.
 
 The skill reads paths from `index_compact.tsv` that are relative to the
