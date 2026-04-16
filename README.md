@@ -37,6 +37,13 @@ Nothing in this bundle replaces watching the original videos. Treat it as
 an index that helps you find the right technique fast, then go watch
 Carsten explain it properly.
 
+## Quick start
+
+1. Download or clone this repository
+2. Install the Claude skill from `SKILL.md`
+3. Make sure the knowledge base files are available in Claude's workspace
+4. Ask questions about facilitation, retrospectives, and agile coaching
+
 ## Installation
 
 ### Cowork or Claude Code
@@ -61,6 +68,14 @@ If you prefer to unzip yourself: extract the `.skill` file, copy
 `~/.claude/skills/youtube-knowledge-base/`, and put the rest of the
 bundle (indices, topics, videos, processing) into a folder called
 `Youtube Knowledge Base` in your workspace.
+
+## Repository structure
+
+- `SKILL.md` — skill definition
+- `index_compact.tsv` / `index.json` — searchable catalog
+- `topics/` — curated overviews
+- `videos/` — knowledge cards
+- `processing/` — scripts used to build/update the bundle
 
 ## Usage
 
