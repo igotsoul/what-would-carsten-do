@@ -1,7 +1,7 @@
 {
   "version": "2.0",
-  "last_updated": "2026-04-13",
-  "total_videos": 375,
+  "last_updated": "2026-04-27",
+  "total_videos": 377,
   "channels": [],
   "videos": [
     {
@@ -10111,6 +10111,60 @@
       ],
       "category": "Facilitation Method",
       "one_liner": "Carsten Lützen walks through Simple Ethnography, the final liberating structure in his series covering all 33 structures. The method involves silent observation of people in their natural context, ..."
+    },
+    {
+      "id": "3nZKZ2ogUCg",
+      "file": "videos/carsten-lutzen/CL_462_magic-estimation-part-2-with-carsten-lützen.md",
+      "title": "Magic Estimation Part 2 with Carsten Lützen",
+      "channel": "Carsten Lützen",
+      "duration": "9:27",
+      "tags": [
+        "magic-estimation",
+        "backlog-cleanup",
+        "backlog-management",
+        "refinement",
+        "duplicates",
+        "silent-estimation",
+        "facilitation",
+        "prioritization",
+        "product-backlog"
+      ],
+      "topics": [
+        "agile-coaching",
+        "facilitation",
+        "backlog-management",
+        "workshop-design"
+      ],
+      "category": "Agile & Product",
+      "one_liner": "Carsten extends his Magic Estimation technique beyond estimation into backlog cleanup — repurposing the silent, turn-based Fibonacci mechanic to triage ~350 backlog items in under 45 minutes."
+    },
+    {
+      "id": "zNQS4V94za4",
+      "file": "videos/carsten-lutzen/CL_463_the-facilitation-trick-hidden-inside-troika-consulting.md",
+      "title": "The facilitation trick hidden inside Troika Consulting",
+      "channel": "Carsten Lützen",
+      "duration": "4:34",
+      "tags": [
+        "troika-consulting",
+        "liberating-structures",
+        "facilitation",
+        "communication-skills",
+        "solution-focused",
+        "prioritization",
+        "active-listening",
+        "coaching",
+        "variation",
+        "reflection"
+      ],
+      "topics": [
+        "facilitation",
+        "liberating-structures",
+        "agile-coaching",
+        "coaching-techniques",
+        "workshop-design"
+      ],
+      "category": "Facilitation Method",
+      "one_liner": "Three variants of Troika Consulting — communication practice, solution-focused (surface existing resources), and prioritization — that repurpose its core mechanic of speaking-then-stepping-out for new facilitation goals."
     }
   ]
 }
